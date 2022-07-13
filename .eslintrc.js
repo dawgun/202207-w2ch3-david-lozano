@@ -1,9 +1,6 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
-    jest: true,
-    node: true,
   },
   extends: ["airbnb-base", "prettier"],
   parserOptions: {
@@ -12,5 +9,6 @@ module.exports = {
   },
   rules: {
     "no-plusplus": "off",
+    "no-alert": "off",
   },
 };
