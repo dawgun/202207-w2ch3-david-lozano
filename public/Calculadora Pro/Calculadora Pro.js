@@ -1,81 +1,80 @@
-calculadoraPro();
-
 function calculadoraPro() {
-    
-    let añadirNumero;
-    let listaNumeros = [];
-    let numResultado = [];
+  let añadirNumero;
+  const listaNumeros = [];
+  const numResultado = [];
 
-    añadirNumero = prompt("Añade un numero");
+  function raizCuadrada(primerNumero, resultadoTotal) {
+    resultadoTotal.push(Math.floor(Math.sqrt(primerNumero) * 1000) / 1000);
+    alert(`La raiz cuadrada de ${primerNumero} es ${resultadoTotal[0]}`);
+  }
 
-    while(añadirNumero !== null) {
-        if (!isNaN(añadirNumero) && añadirNumero.length !== 0) {
-            listaNumeros.push(Number(añadirNumero));
-        } else {
-            alert("Escribe solo numeros enteros o con decimales usando un punto en vez de coma");
-        }
-        añadirNumero = prompt("Añade un numero");
+  function numCalculadora(listaDeNumeros, resultadoTotal) {
+    let sumTotal = listaDeNumeros[0];
+    let resTotal = listaDeNumeros[0];
+    let mulTotal = listaDeNumeros[0];
+    let divTotal = listaDeNumeros[0];
+
+    for (let pos = 1; pos < listaDeNumeros.length; pos++) {
+      sumTotal += listaDeNumeros[pos];
+      resTotal -= listaDeNumeros[pos];
+      mulTotal *= listaDeNumeros[pos];
+      divTotal /= listaDeNumeros[pos];
     }
 
-    if (listaNumeros.length == 0) {
-        alert("No has introducido ningun número");
-    } else if (listaNumeros.length == 1) {
-        raizCuadrada(listaNumeros[0], numResultado);
-    } else {
-        numCalculadora(listaNumeros, numResultado);
-    } 
-    nuevaOperacion();
-} 
+    resultadoTotal.push(Math.floor(sumTotal * 1000) / 1000);
+    resultadoTotal.push(Math.floor(resTotal * 1000) / 1000);
+    resultadoTotal.push(Math.floor(mulTotal * 1000) / 1000);
+    resultadoTotal.push(Math.floor(divTotal * 1000) / 1000);
 
-function raizCuadrada(num1, numResultado) {
-    numResultado.push(Math.floor(Math.sqrt(num1)*1000)/1000);
-    alert("La raiz cuadrada de " + num1 + " es " + numResultado[0]);
-}
+    alert(
+      `Para los números ${listaDeNumeros}\nLa suma total es ${resultadoTotal[0]}\nLa resta total es ${resultadoTotal[1]}\nLa multiplicación total es ${resultadoTotal[2]}\nLa división total es ${resultadoTotal[3]}`
+    );
+  }
 
-function numCalculadora(listaNumeros, numResultado) {
+  function nuevaOperacion() {
+    const reset = prompt(
+      "¿Quieres realizar una nueva operación? (Responde Si o No)"
+    );
 
-    let sumTotal = listaNumeros[0];
-    let resTotal = listaNumeros[0];
-    let mulTotal = listaNumeros[0];
-    let divTotal = listaNumeros[0];
-        
-    for (pos = 1; pos < listaNumeros.length; pos++){
-        sumTotal += listaNumeros[pos];
-        resTotal -= listaNumeros[pos];
-        mulTotal *= listaNumeros[pos];
-        divTotal /= listaNumeros[pos];
-    }
-
-    numResultado.push(Math.floor(sumTotal*1000)/1000);
-    numResultado.push(Math.floor(resTotal*1000)/1000);
-    numResultado.push(Math.floor(mulTotal*1000)/1000);
-    numResultado.push(Math.floor(divTotal*1000)/1000);
-
-    alert("Para los números " +listaNumeros+
-    "\nLa suma total es " + numResultado[0] + 
-    "\nLa resta total es " + numResultado[1] +
-    "\nLa multiplicación total es " + numResultado[2] +
-    "\nLa división total es " + numResultado[3]);
-}
-
-function nuevaOperacion() {
-
-    let reset = prompt("¿Quieres realizar una nueva operación? (Responde Si o No)");
-    
     if (reset == null) {
       alert("Que tengas un buen día");
     } else {
-        switch (reset.toLowerCase()) {
-          case "si":
-            calculadoraPro();
-            break;
-          case "no": 
-            alert("Que tengas un buen día");
-            break;
-          default: 
-            alert("No respondiste correctamente");
-            nuevaOperacion();
-            break;
-        }
+      switch (reset.toLowerCase()) {
+        case "si":
+          calculadoraPro();
+          break;
+        case "no":
+          alert("Que tengas un buen día");
+          break;
+        default:
+          alert("No respondiste correctamente");
+          nuevaOperacion();
+          break;
+      }
     }
+  }
+
+  añadirNumero = prompt("Añade un numero");
+
+  while (añadirNumero !== null) {
+    if (!Number.isNaN(añadirNumero) && añadirNumero.length !== 0) {
+      listaNumeros.push(Number(añadirNumero));
+    } else {
+      alert(
+        "Escribe solo numeros enteros o con decimales usando un punto en vez de coma"
+      );
+    }
+    añadirNumero = prompt("Añade un numero");
+  }
+
+  if (listaNumeros.length === 0) {
+    alert("No has introducido ningun número");
+  } else if (listaNumeros.length === 1) {
+    raizCuadrada(listaNumeros[0], numResultado);
+  } else {
+    numCalculadora(listaNumeros, numResultado);
+  }
+  nuevaOperacion();
 }
+
+calculadoraPro();
