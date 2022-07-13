@@ -40,3 +40,7 @@ if (listaNumeros.length === 0) {
 } else {
   numCalculadora(listaNumeros[0], listaNumeros[1]);
 }
++ num2 + " es " + numResultado[3]);
+} 
+ + " es " + numResultado[3]);
+} 
