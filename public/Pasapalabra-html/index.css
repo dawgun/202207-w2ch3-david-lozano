@@ -1,0 +1,406 @@
+@font-face {font-family: nunito;src: url(https://atreslab.com/modulosblancos/static/roscos-pasapalabra/assets/Nunito-Black.woff2);}
+
+*{
+    font-family: "nunito", sans-serif;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+html {
+    background-color: #181a1b;
+}
+
+body {
+    height: 775px;
+    margin: 100px 0 0;
+    padding-top: 100px;
+    background-image: url("pasapalabra.jpg");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-position-y: -25px;
+}
+
+.pasapalabra {
+    border-radius: 50px;
+    border-style: solid solid none solid;
+    background-image: linear-gradient(#0082fc,white 100%);
+    background-size: 100% 200px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 800px;
+    width: 1000px;
+    margin: -3em auto 0;
+    padding-bottom: 100px;
+}
+
+#titulo {
+    font-size: 4em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pantallafallo {
+    position: absolute;
+    background-color: rgba(180, 31, 31, 0.6);
+    margin-top: -146px;
+    margin-left: -800px;
+    z-index: 1;
+    font-size: 2em;
+    display: none;
+    width: 2600px;
+    height: 1000px;
+}
+
+.contenidofallo {
+    width: 400px;
+    padding-top: 300px;
+    padding-left: 1100px;
+    text-align: center;
+}
+
+#letrafallada {
+    position: inherit;
+    background-color: rgb(180, 31, 31);
+    height: 5rem;
+    width: 5rem;
+    margin-left: 160px;
+}
+
+#continuarfallo {
+    background-color: #181a1b;
+    border-radius: 100px;
+    border: 0px;
+    width: 200px;
+    height: 45px;
+    font-size: 1em;
+}
+
+#respuestacorrecta {
+    border-bottom: 1px solid white;
+    width: 200px;
+    margin-left: 100px;
+}
+
+.circulocentral{
+    position:absolute;
+    height: 400px;
+    width: 400px;
+    text-align: center;
+    background-color: #181a1b;
+    border-radius: 50%;
+    margin: 140px 302px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.bienvenido{
+    color: #6ea9e8;
+    font-size: 2em;
+    margin: 20px;
+}
+
+.bienvenidopasapalabra{
+    font-size: 2.5em;
+}    
+
+#comenzar {
+    margin-top: 20px;
+    width: 160px;
+    height: 45px;
+    background-color: #163b87;
+    border-radius: 100px;
+    font-size: 1.8em;
+    border: 0px;
+}
+
+.preguntasyrespuestas{
+    display:none;
+    width: 400px;
+}
+
+#letraseleccionada {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    margin-left: 100px;
+    height: 45px;
+    background-color: #181a1b;
+    border-radius: 100px;
+    color: #2c93f7;
+}
+
+#pregunta {
+    font-size: 1.5em;
+}   
+
+#palabraRespondida {
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid white;
+    text-transform: uppercase;
+    width: 240px;
+    font-size: 1em;
+    text-align: center;
+    outline: none;
+}
+
+#botonpasapalabra, #botonresponder{
+    border-style: solid none solid none;
+    border-width: 1px;
+    color: rgb(197, 195, 195);
+    font-size: 1.5em;
+    letter-spacing: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#botonpasapalabra:hover, #botonresponder:hover{
+    color:white;
+}
+
+.finalpartida {
+    display:none;
+}
+
+.frasefinal {
+    margin-left: 50px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.ptiemporestante{
+    margin-left: 195px;
+    margin-top: -62px;
+    width: 160px;
+    height: 45px;
+    background-color: #163b87;
+    border-radius: 100px;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: 2px black solid;
+}
+
+#paciertosfinal {
+    background-color: #059e34;
+    margin-left: 240px;
+    margin-top: -71px;
+    border: 2px black solid;
+}
+
+#pfallosfinal {
+    background-color: #a22121;
+    margin-left: 240px;
+    margin-top: -71px;
+    border: 2px black solid;
+}
+
+#jugardenuevo {
+    width: 269px;
+    height: 45px;
+    background-color: #d9ce2d;
+    border-radius: 100px;
+    font-size: 1.5em;
+    border: 2px black solid;
+}
+
+.palabra {
+    display: flex;
+    position:absolute;
+    align-items: center; 
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    background-color: #0042c7;
+    border-radius: 50%;
+    border: 2px white solid;
+    font-size: 2rem;
+}
+
+.rosco{
+    margin: 300px 435px;
+}
+
+.palabra-acertada {
+    background-color: rgb(31, 180, 110);
+}
+
+.palabra-fallida {
+    background-color: rgb(180, 31, 31);
+}
+
+.marcador {
+    position: absolute;
+    -webkit-text-stroke: 0.3px black;
+}
+
+.pfalladas {
+    position: absolute;
+    font-size: 1.2em;
+    top: 600px;
+    left: 780px;
+} 
+
+.falladas {
+    height: 60px;
+    width: 60px;
+    background-color: #a22121;
+    top: 575px;
+    left: 900px;
+    border: 2px black solid;
+}
+
+.restantes {
+    height: 60px;
+    width: 60px;
+    background-color: rgb(44, 13, 157);
+    top: 650px;
+    left: 900px;
+    border: 2px black solid;
+}
+
+.prestantes {
+    position: absolute;
+    font-size: 1.2em;
+    top: 670px;
+    left: 780px;
+}
+
+.tiempo {
+    height: 150px;
+    width: 150px;
+    background-color: #0043c6;
+    top: 600px;
+    left: 50px;
+    border: 2px black solid;
+    font-size: 3em;
+}
+
+.aciertos {
+    height: 100px;
+    width: 100px;
+    background-color: #059e34;
+    top: 625px;
+    left: 180px;
+    border: 2px black solid;
+    font-size: 2.5em;
+}
+
+.footer {
+    text-align: center;
+}
+
+input::placeholder {
+    color: rgb(197, 195, 195);
+}
+
+#a {
+    transform: rotate(-90deg) translate(10em) rotate(90deg);
+}
+
+#b {
+    transform: rotate(-76.4deg) translate(10em) rotate(76.4deg);
+}
+
+#c {
+    transform: rotate(-63.1deg) translate(10em) rotate(63.1deg);
+}
+
+#d {
+    transform: rotate(-49.8deg) translate(10em) rotate(49.8deg);
+}
+
+#e {
+    transform: rotate(-36.5deg) translate(10em) rotate(36.5deg);
+}
+
+#f {
+    transform: rotate(-23.2deg) translate(10em) rotate(23.2deg);
+}
+
+#g {
+    transform: rotate(-9.9deg) translate(10em) rotate(9.9deg);
+}
+
+#h {
+    transform: rotate(3.4deg) translate(10em) rotate(-3.4deg);
+}
+
+#i {
+    transform: rotate(16.7deg) translate(10em) rotate(-16.7deg);
+}
+
+#j {
+      transform: rotate(30deg) translate(10em) rotate(-30deg);
+}
+
+#k {
+    transform: rotate(43.3deg) translate(10em) rotate(-43.3deg);
+}
+
+#l {
+    transform: rotate(56.6deg) translate(10em) rotate(-56.6deg);
+}
+
+#m {
+    transform: rotate(69.9deg) translate(10em) rotate(-69.9deg);
+}
+
+#n {
+    transform: rotate(83.2deg) translate(10em) rotate(-83.2deg);
+}
+
+#ñ {
+    transform: rotate(96.5deg) translate(10em) rotate(-96.5deg);
+}
+
+#o {
+    transform: rotate(109.8deg) translate(10em) rotate(-109.8deg);
+}
+
+#p {
+    transform: rotate(123.1deg) translate(10em) rotate(-123.1deg);
+}
+
+#q {
+    transform: rotate(136.4deg) translate(10em) rotate(-136.4deg);
+}
+
+#r {
+    transform: rotate(149.7deg) translate(10em) rotate(-149.7deg);
+}
+
+#s {
+    transform: rotate(163deg) translate(10em) rotate(-163deg);
+}
+
+#t {
+    transform: rotate(176.3deg) translate(10em) rotate(-176.3deg);
+}
+
+#u {
+    transform: rotate(189.6deg) translate(10em) rotate(-189.6deg);
+}
+
+#v {
+    transform: rotate(202.9deg) translate(10em) rotate(-202.9deg);
+}
+
+#w {
+    transform: rotate(216.2deg) translate(10em) rotate(-216.2deg);
+}
+
+#x {
+    transform: rotate(229.5deg) translate(10em) rotate(-229.5deg);
+}
+
+#y {
+    transform: rotate(242.8deg) translate(10em) rotate(-242.8deg);
+}
+
+#z {
+    transform: rotate(256.1deg) translate(10em) rotate(-256.1deg);
+}

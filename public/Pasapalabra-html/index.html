@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,400,600,900">
+    <title>Pasapalabra</title>
+</head>
+<body>
+    <fieldset id="pasapalabra" class="pasapalabra">
+        <legend id="titulo">PASAPALABRA</legend>
+        <div class="pantallafallo" id="pantallafallo">
+            <div class="contenidofallo">
+                <p class="palabra" id="letrafallada">A</p>
+                <p>la respuesta correcta era</p>
+                <p id="respuestacorrecta"></p>
+                <input id="continuarfallo" type="submit" value="Continuar">
+            </div>
+        </div>
+        <div class="circulocentral" id="circulocentral">
+            <div class="iniciopasapalabra" id="iniciopasapalabra">
+                <p class="bienvenido">Bienvenido a</p>
+                <p class="bienvenido bienvenidopasapalabra">PASAPALABRA</p>
+                <input id="comenzar" type="submit" value="Empezar">
+            </div>
+            <div class="preguntasyrespuestas" id="preguntasyrespuestas">
+                <p id="letraseleccionada"></p>
+                <p id="pregunta"></p>
+                <input placeholder= "Escribe aquí tu respuesta"id="palabraRespondida" name="palabraRespondida" type="text" minlength="1" maxlength="15" required>
+                <p id="botonresponder">Responder</p>
+                <p id="botonpasapalabra">Pasapalabra</p>
+            </div>
+            <div class="finalpartida" id="finalpartida">
+                <h1>¡Se ha acabado el juego!</h1>
+                <h2 class="frasefinal aciertosfinal">Has acertado</h2>
+                <p class="palabra" id="paciertosfinal"></p>
+                <h2 class="frasefinal fallosfinal">Has fallado</h2>
+                <p class="palabra" id="pfallosfinal"></p>
+                <h2 class="frasefinal tiemporestante">Tiempo</h2>
+                <p class="ptiemporestante" id="ptiemporestante"></p>
+                <input id="jugardenuevo" type="submit" value="JUGAR DE NUEVO">
+            </div>
+        </div>
+        <div class="alfabeto">
+            <ul>
+                <li id= "a" class="palabra rosco">A</li>
+                <li id= "b" class="palabra rosco">B</li>
+                <li id= "c" class="palabra rosco">C</li>
+                <li id= "d" class="palabra rosco">D</li>
+                <li id= "e" class="palabra rosco">E</li>
+                <li id= "f" class="palabra rosco">F</li>
+                <li id= "g" class="palabra rosco">G</li>
+                <li id= "h" class="palabra rosco">H</li>
+                <li id= "i" class="palabra rosco">I</li>
+                <li id= "j" class="palabra rosco">J</li>
+                <li id= "k" class="palabra rosco">K</li>
+                <li id= "l" class="palabra rosco">L</li>
+                <li id= "m" class="palabra rosco">M</li>
+                <li id= "n" class="palabra rosco">N</li>
+                <li id= "ñ" class="palabra rosco">Ñ</li>
+                <li id= "o" class="palabra rosco">O</li>
+                <li id= "p" class="palabra rosco">P</li>
+                <li id= "q" class="palabra rosco">Q</li>
+                <li id= "r" class="palabra rosco">R</li>
+                <li id= "s" class="palabra rosco">S</li>
+                <li id= "t" class="palabra rosco">T</li>
+                <li id= "u" class="palabra rosco">U</li>
+                <li id= "v" class="palabra rosco">V</li>
+                <li id= "w" class="palabra rosco">W</li>
+                <li id= "x" class="palabra rosco">X</li>
+                <li id= "y" class="palabra rosco">Y</li>
+                <li id= "z" class="palabra rosco">Z</li>
+            </ul>
+        </div>
+        <div class="marcador">
+            <p class="pfalladas">PALABRAS FALLADAS</p>
+            <p class="palabra falladas" id="falladas" >0</p>
+            <p class="prestantes">PALABRAS RESTANTES</p>
+            <p class="palabra restantes" id="restantes" >27</p>
+        </div>
+        <div class="marcador">
+            <ul>
+                <li class="palabra aciertos" id="aciertos" >0</li>
+                <li class="palabra tiempo" id="tiempo" >150</li>
+            </ul>
+        </div>
+    </fieldset>
+<footer class="footer"> Made by David Lozano </footer>
+<script src="index.js"></script>
+</body>
+</html>
+
